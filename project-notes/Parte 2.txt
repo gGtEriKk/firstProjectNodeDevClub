@@ -1,0 +1,36 @@
+Agora será a parte de atualizar dados de um usuário existente
+no sistema através do id.
+
+- Para começar, cria uma rota do tipo PUT;
+- Na rota '/users', coloca /:id, ficando assim: '/users/:id',
+pois na barra de endereços do insomnia, iremos buscar o usuário
+pelo id, para atualizar os dados;
+- Cria as destructuring assignment para id, name e age;
+- Monta a variável de usuário atualizado com id, name e age;
+- Agora, para localizar o usuário dentro do array para atualizar,
+utilizamos dois atributos: find e findIndex, onde:
+    > find: permite encontrar a informação dentro do array e retornar
+    para o usuário;
+    > findIndex: retorna a posição do array na qual está o usuário, mas,
+    caso não encontre, retorna -1;
+- Para montar a estrutura do findIndex:
+    > cria uma variável para representar o index, ou seja, a posição do
+    usuário e o valor da variável é o array --> const .... = nome do array;
+    > após o nome da array, digita .findIndex, pois queremos encontrar A
+    posição;
+    > após o findIndex, entre parenteses, monta a estrutura para percorrer
+    todo o array, iterando ítem por ítem --> (user => user.id === id) --> 
+    desta forma irá percorrer e verificar se o usuário tem o mesmo id que 
+    está sendo buscado;
+- Agora testa, chamando a variável index no console.log, irá aparecer -1,
+pois não há informação salva no array;
+- Cria usuários na array, busca pelo id, agora irá apresentar a posição;
+- Agora temos de apresentar a mensagem de erro 404 'not found', que é O
+padrão para usuário não encontrado, para substituir o -1;
+- Para isso, utilizamos a estrutura if, para incluir a condição: se o index
+for menor que zero, ou seja, -1, então retorna o código 404 e colocamos uma
+mensagem para representar o erro 'não encontrado';
+- Agora será a parte de atualizar e o primeiro passo é pegar o array e colocar
+dentro da estrutura do put, dentro dos colchetes coloca a variável de index,
+= usuário atualizado --> array[index] = usuário atualizado --> a posição do
+usuário será assumida pelo usuário atualizado;

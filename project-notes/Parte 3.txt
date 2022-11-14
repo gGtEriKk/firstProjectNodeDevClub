@@ -1,0 +1,25 @@
+Agora iremos criar a rota de deletar usuário, também pelo id,
+assim como fizemos na rota put.
+
+- Para começar, cria a rota .delete e inclui o /:id na rota;
+- Criamos o destructuring assignment apenas para o id, pois vai
+pegar pelo id e deletar o usuário;
+- Assim como fizemos no put, criamos a estrutura do findIndex para
+iterar ítem por ítem até achar o usuário e deletar;
+- Cria a condição para usuário não encontrado, assim como no put;
+- Pega o array, coloca dentro do delete, sem os colchetes, pois
+irá deletar o usuário da posição encontrada;
+- Utilizamos o método .splice que é o método utilizado para deletar
+um usuário de um array;
+- Entre parenteses, colocamos index,1 --> (index,1) --> que significa
+que o usuário deletado será apenas o da posição. Caso coloque 0,1
+seria deletado o usuário da posiçao 0, caso coloque 0,2, iria deletar
+usuários até a posição 2, ou seja, 0 e 1 e assim por diante. Fica desta
+forma: array.splice(index, 1);
+- Após isso, colocamos o return com o código de sucesso 204 e o json
+sem nada entre parenteses, pois irá retorna vazio. Se quiser, coloca uma
+mensagem para representar 'usuário deletado';
+- Cria uma request no insomnia do tipo DEL e nomeia;
+- Para testar, criar a lista de usuários, na barra de endereços do DEL,
+consulta o id e será deletado, quando atualizar a lista, o usuário não
+aparecerá mais.

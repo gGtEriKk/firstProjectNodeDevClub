@@ -1,0 +1,38 @@
+PROJETO UTILIZANDO NODE, COLOCANDO ROTA PARA VERIFICAR, CRIAR,
+ATUALIZAR E DELETAR INFORMAÇÕES E USUÁRIOS, COM OS MÉTODOS GET,
+POST, PUT E DELETE.
+
+- Para começar, cria uma const para simular um banco de dados de
+usuários sendo um array vazio --> const .... = [];
+- Cria as rotas get e post, uma para buscar usuário e outra para
+criar usuário;
+- No insomnia, criar uma new request para criar usuário, dá um nome
+e o tipo, coloca como POST;
+- Seleciona JSON, pois vai ser mandado um arquivo JSON pelo body;
+- Coloca os dados, no caso, nome e idade (name, age);
+- Cria uma destructuring assignment para as variáveis name e age;
+- Agora monta o usuário;
+- Quando executar no insomnia, irá retornar o usuário criado, porém
+sem um id, que é fundamental para identificar cada usuário;
+- Há uma biblioteca dentro do express que nos ajuda a implementar um
+id único universal ao usuário, ou seja, este id nunca irá se repetir
+- A biblioteca se chama uuid e para instalar, coloca no terminal, o
+comando: npm i uuid;
+- Importa a biblioteca dentro do arquivo .js;
+- Escolhe a versão .v4 que é mais completa e será inserida como uma
+função;
+- A estrutura ficará assiim: {id: uuid.v4(), name, age} --> esta será
+a estrutura do usuário criado;
+- Agora, para inserir o usuário dentro da array, coloca o nome da array,
+.push(usuário criado) -> entre parenteses é o mesmo nome da variável de
+usuário criado. Fica assim: array.push(.......);
+- O padrã de usuário criado é 201, um código de sucesso. No insomnia, o
+código apresentado é o 200. Para inserir o código 201, insere o atributo
+.status(201), no return;
+- Feito insto, executa no insomnia e estará criado o usuário com o código
+201 Created;
+- Para adicionar outro, apenas muda os dados nome e idade e executa;
+- Para buscar os usuários pelo insomnia, temos que colocar entre parenteses
+no return da rota get, o nome da array: return response.json(array);
+- Feito isto vai no insomnia e executa;
+- Está finalizado o método post para criação de usuário.
