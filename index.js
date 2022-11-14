@@ -35,13 +35,21 @@ app.get('/users/:id', checkUsersID, (request, response) => {
 })
 
 app.post('/users', (request, response) => {
-    const { name, age } = request.body
+    try {
+        const { name, age } = request.body
 
-    const createdUser = { id: uuid.v4(), name, age }
+        if (age < 18) throw new Error("Only over 18 years old!")
 
-    users.push(createdUser)
+        const createdUser = { id: uuid.v4(), name, age }
 
-    return response.status(201).json(createdUser)
+        users.push(createdUser)
+
+        return response.status(201).json(createdUser)
+    } catch (err) {
+        return response.status(400).json({ error: err.message })
+    } finally {
+        console.log('finalizado')
+    }
 })
 
 app.put('/users/:id', checkUsersID, (request, response) => {
