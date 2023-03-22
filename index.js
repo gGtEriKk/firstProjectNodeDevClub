@@ -24,7 +24,7 @@ const checkUsersID = (request, response, next) => {
     next()
 }
 
-app.get('/users', (request, response) => {
+app.get('/', (request, response) => {
     return response.json("HELLO WORLD")
 })
 
