@@ -12,7 +12,13 @@
 Bibliotecas utilizadas:
 
 > cors: para auxiliar nas requisições HTTP e na origem de onde o site é acessado;
+
+<br>
+
 > uuid: para geração de um id único para cada usuário criado;
+
+<br>
+
 > express: para gerenciar os diferentes tipos de requisições HTTP;
 
 <br>
